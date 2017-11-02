@@ -8,21 +8,27 @@
 </head>
 <body>
 	<div id="vue-app">
-		<h1>{{ greet('afternoon') }}</h1>
-		<a v-bind:href="website">The net Ninja</a>
-		<p>Name: {{ name }}</p>
-		<p>Job: {{ job }}</p>
-		<input type="text" v-bind:value="name">
-		<p v-html="websiteTag"></p>
+		<h1>Looping through lists</h1>
+		<ul>
+			<li v-for="character in characters">{{character}}</li>
+		</ul>
 
-		<h1>Eventos</h1>
-		<button v-on:click="add(1)">Add a Year</button>
-		<button v-on:click="subtract(1)">Subtract a Year</button>
+		<ul>
+			<li v-for="(ninja, index) in ninjas">
+				{{index}}. {{ninja.name}} - {{ninja.age}}
+			</li>
+		</ul>
 
-		<button v-on:dblclick="add(10)">Add 10 Year</button>
-		<button v-on:dblclick="subtract(10)">Subtract 10 Year</button>
-		<p>My age is {{ age }}</p>
-		<div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
+		<template v-for="(ninja, index) in ninjas">
+			<h3>{{index}}.{{ninja.name}}</h3>
+			<p>{{ninja.age}}</p>
+		</template>
+
+		<template v-for="ninja in ninjas">
+			<div v-for="(val,key) in ninja">
+				<p>{{key}} - {{val}}</p>
+			</div>
+		</template>
 	</div>
 	
 	<script src="app.js"></script>
