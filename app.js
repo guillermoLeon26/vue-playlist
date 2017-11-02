@@ -1,27 +1,26 @@
 new Vue({
 	el: '#vue-app',
 	data: {
-		name: 'Guillermo',
-		job: 'Ninja',
 		age: 25,
-		website: 'http://www.thenetninja.co.uk',
-		websiteTag: '<a href="http://www.thenetninja.co.uk">website</a>',
-		x: 0,
-		y: 0
+		a: 0,
+		b: 0
 	},
 	methods:{
-		greet: function (time) {
-			return 'Good '+ time + ' ' + this.name;
+		/*addToA: function () {
+			return this.a + this.age;
 		},
-		add:function (inc) {
-			this.age += inc;
+		addToB: function () {
+			return this.b + this.age;
+		}*/
+	},
+	computed:{
+		addToA: function () {
+			console.log('addToA');
+			return this.a + this.age;
 		},
-		subtract:function (dec) {
-			this.age -= dec;
-		},
-		updateXY:function (event) {
-			this.x = event.offsetX;
-			this.y = event.offsetY;
+		addToB: function () {
+			console.log('addToB');
+			return this.b + this.age;
 		}
 	}
 });
