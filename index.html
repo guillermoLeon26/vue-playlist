@@ -8,21 +8,13 @@
 </head>
 <body>
 	<div id="vue-app">
-		<h1>{{ greet('afternoon') }}</h1>
-		<a v-bind:href="website">The net Ninja</a>
-		<p>Name: {{ name }}</p>
-		<p>Job: {{ job }}</p>
-		<input type="text" v-bind:value="name">
-		<p v-html="websiteTag"></p>
+		<h2>Refs</h2>
+		<input type="text" ref="input">
+		<button v-on:click="readRefs">Submit</button>
+		<p>You favorite food: {{output}}</p>
 
-		<h1>Eventos</h1>
-		<button v-on:click="add(1)">Add a Year</button>
-		<button v-on:click="subtract(1)">Subtract a Year</button>
-
-		<button v-on:dblclick="add(10)">Add 10 Year</button>
-		<button v-on:dblclick="subtract(10)">Subtract 10 Year</button>
-		<p>My age is {{ age }}</p>
-		<div id="canvas" v-on:mousemove="updateXY">{{x}}, {{y}}</div>
+		<div ref="test">hello</div>
+		
 	</div>
 	
 	<script src="app.js"></script>
