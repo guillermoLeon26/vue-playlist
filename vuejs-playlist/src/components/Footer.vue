@@ -1,14 +1,19 @@
 <template>
   <footer>
-    <p>{{ copyrith }}</p>
+    <p>{{ copyrith }} {{ title }}</p>
   </footer>
 </template>
 
 <script>
 export default {
+  props:{
+    title:{
+      type: String
+    }
+  },
   data () {
     return {
-      copyrith: 'Copyrith 2017 Vue Ninjas'
+      copyrith: 'Copyrith 2017 '
     }
   }
 }
