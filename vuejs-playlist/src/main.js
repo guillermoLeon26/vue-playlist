@@ -8,7 +8,8 @@ Vue.use(VueResourse);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-	routes: Routes
+	routes: Routes,
+	mode: 'history'
 });
 
 //Filters
